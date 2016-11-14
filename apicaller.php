@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',1); 
+error_reporting(E_ALL);
 class ApiCaller {
 	//some variables for the object
 	private $_app_id;
@@ -35,12 +37,9 @@ class ApiCaller {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 				
 		//execute the request
-		 $result = curl_exec($ch);
-		 curl_close($ch);
-        
 		$result = curl_exec($ch);
-		 curl_close($ch);
-        		 
+		curl_close($ch);
+               		 
 		//json_decode the result
 		$result = @json_decode($result, true);
 
