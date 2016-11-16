@@ -14,20 +14,20 @@ class ApiCaller {
 		$this -> _app_key = $app_key;
 		$this -> _api_url = $api_url;
 	}
-
+ 
 	//send the request to the API server
 	//also encrypts the request, then checks
 	//if the results are valid
 	public function sendRequest($request_params) {
 		//encrypt the request parameters
 		$enc_request = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $this -> _app_key, json_encode($request_params), MCRYPT_MODE_ECB));
-        		
+       
 		//create the params array, which will
 		//be the POST parameters
 		$params = array();
 		$params['enc_request'] = $enc_request;
 		$params['app_id'] = $this -> _app_id;
-		
+	
 		//initialize and setup the curl handler
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this -> _api_url);
@@ -39,7 +39,7 @@ class ApiCaller {
 		//execute the request
 		$result = curl_exec($ch);
 		curl_close($ch);
-               		 
+        
 		//json_decode the result
 		$result = @json_decode($result, true);
 
@@ -55,6 +55,6 @@ class ApiCaller {
 
 		//if everything went great, return the data
 		return $result['data'];
-	}
+  } 
 
 }

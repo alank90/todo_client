@@ -13,6 +13,7 @@ $todo_items = $apicaller->sendRequest(array(
     'username' => $_SESSION['username'],
     'userpass' => $_SESSION['userpass']
 ));
+
  echo '<br>';
 echo 'This is todo_items: ';
 echo '<br>';
