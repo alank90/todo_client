@@ -30,7 +30,7 @@ $today = date("Ymd");
 ?>
 	
 
-	<!--============ HTML Here ======================-->
+	<!--=======================HTML Here =========================================-->
 <body>
 		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
 			<div class="container">
@@ -38,6 +38,7 @@ $today = date("Ymd");
 			</div>
 		</nav>
 
+  <!-- ========================= jQuery UI Dialog Markup  =============================-->
 		<div id="main" class="container">
 			<div class="textalignright marginbottom10">
 				<span id="newtodo" class="btn btn-info btn-lg">Create a new TODO item</span>
@@ -64,6 +65,8 @@ $today = date("Ymd");
 					</form>
 				</div>
 			</div>
+			
+			<!-- ================= Todo List User markup  ==============================-->
 			<div id="todolist">
 				<!-- Note in source $todo_items is written as an object but in article example
 					he returns it as an array -->
@@ -95,11 +98,11 @@ $today = date("Ymd");
                  <?php endforeach; ?>
 			</div>
 			
-		</div>  <!-- .container <div> end </div>  -->
+		</div>  <!-- .container <div> end   -->
 	
 
 
- <!-- =================  JS and JS Framework Files  ================-->
+ <!-- ======================  JS and JS Framework Files  ===============================-->
      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 	<script  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<!-- Latest compiled and minified JavaScript UI -->
