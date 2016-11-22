@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/normalize.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css" type="text/css" />
-		<link rel="stylesheet" href="css/main_todo_client.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/todo.css" type="text/css" media="screen" charset="utf-8"/>
 	</head>
 <!-- ================= PHP Here ==================-->
 <?php
@@ -30,7 +30,9 @@ $today = date("Ymd");
 ?>
 	
 
-	<!--=======================HTML Here =========================================-->
+	<!--========================================================================
+	======================== HTML Here =========================================
+	 ==========================================================================-->
 <body>
 		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
 			<div class="container">
@@ -38,8 +40,9 @@ $today = date("Ymd");
 			</div>
 		</nav>
 
-  <!-- ========================= jQuery UI Dialog Markup  =============================-->
-		<div id="main" class="container">
+ 		<div id="main" class="container">  <!-- Main Container  -->
+	
+		 <!-- ========================= jQuery UI Dialog Markup  =============================-->
 			<div class="textalignright marginbottom10">
 				<span id="newtodo" class="btn btn-info btn-lg">Create a new TODO item</span>
 				<div id="newtodo_window" title="Create a new TODO item">
@@ -68,17 +71,17 @@ $today = date("Ymd");
 			
 			<!-- ================= Todo List User markup  ==============================-->
 			<div id="todolist">
-				<!-- Note in source $todo_items is written as an object but in article example
+				<!-- Note in source $todo_items is written as an object returned, but in article example
 					he returns it as an array -->
 				<?php foreach($todo_items as $todo): ?>
                     <h3><a href="#"><?php echo $todo->title; ?></a></h3>
                     <div>
                 <form method="POST" action="update_todo.php">
                 <div class="textalignright">
-                    <a href="delete_todo.php?todo_id=<?php echo $todo->todo_id; ?>">Delete</a>
+                    <a id='delete_button'  href="delete_todo.php?todo_id=<?php echo $todo->todo_id; ?>">Delete</a>
                 </div>
                 <div>
-                    <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value="12/09/2011" /></p>
+                    <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value=<?php echo $todo->due_date;?> /></p>
                     <p>Description:<br /><textarea class="span8" id="description_<?php echo $todo->todo_id; ?>" class="description" name="description"><?php echo $todo->description; ?></textarea></p>
                 </div>
                 <div class="textalignright">
@@ -98,7 +101,7 @@ $today = date("Ymd");
                  <?php endforeach; ?>
 			</div>
 			
-		</div>  <!-- .container <div> end   -->
+		</div>  <!-- End of Main .container   -->
 	
 
 
@@ -125,6 +128,15 @@ $today = date("Ymd");
 			});
 			$('#newtodo').click(function() {
 				$('#newtodo_window').dialog('open');
+			});
+			
+			$("#delete_button").on("click",function(e)  {
+				e.preventDefault();
+				var result = confirm("Are You Sure You Want To Delete This Item?");
+                if (result) {
+                     //Redirect to delete page
+                   window.location = "delete_todo.php";
+               }
 			});
 		});
 	</script>
