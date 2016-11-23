@@ -6,10 +6,10 @@ include_once 'apicaller.php';
  $serverAddress = "http://" . $_SERVER['SERVER_ADDR'];
  $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', $serverAddress . '/todo_api/');
  
-$new_item = $apicaller->sendRequest(array(
+$delete_item = $apicaller->sendRequest(array(
     'controller' => 'todo',
     'action' => 'delete',
-     'todo_id' => $_POST['todo_id'],
+     'todo_id' => $_GET['todo_id'],
     'username' => $_SESSION['username'],
     'userpass' => $_SESSION['userpass']
 ));

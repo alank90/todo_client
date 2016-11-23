@@ -8,8 +8,10 @@
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css" type="text/css" />
 		<link rel="stylesheet" href="css/todo.css" type="text/css" media="screen" charset="utf-8"/>
 	</head>
+	
 <!-- ================= PHP Here ==================-->
 <?php
+// Start with a read of all todo items off the server
 ini_set('display_errors',1); 
  error_reporting(E_ALL);
 session_start();
@@ -24,7 +26,7 @@ $todo_items = $apicaller->sendRequest(array(
     'username' => $_SESSION['username'],
     'userpass' => $_SESSION['userpass']
 ));
-$today = date("Ymd");
+//$today = date("Ymd");
 //echo '';
 //var_dump($todo_items);
 ?>
@@ -78,7 +80,7 @@ $today = date("Ymd");
                     <div>
                 <form method="POST" action="update_todo.php">
                 <div class="textalignright">
-                    <a id='delete_button'  href="delete_todo.php?todo_id=<?php echo $todo->todo_id; ?>">Delete</a>
+                    <a  class="delete_button btn btn-danger" href="#">Delete</a>
                 </div>
                 <div>
                     <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value=<?php echo $todo->due_date;?> /></p>
@@ -130,12 +132,12 @@ $today = date("Ymd");
 				$('#newtodo_window').dialog('open');
 			});
 			
-			$("#delete_button").on("click",function(e)  {
+			$(".delete_button").on("click",function(e)  {
 				e.preventDefault();
 				var result = confirm("Are You Sure You Want To Delete This Item?");
                 if (result) {
                      //Redirect to delete page
-                   window.location = "delete_todo.php";
+                  window.location = "delete_todo.php?todo_id=<?php echo $todo->todo_id; ?>"; 
                }
 			});
 		});

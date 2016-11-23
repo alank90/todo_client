@@ -27,7 +27,7 @@ class ApiCaller {
 		$params = array();
 		$params['enc_request'] = $enc_request;
 		$params['app_id'] = $this -> _app_id;
-	
+	  
 		//initialize and setup the curl handler
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this -> _api_url);
