@@ -28,7 +28,7 @@ $todo_items = $apicaller->sendRequest(array(
 ));
 //$today = date("Ymd");
 //echo '';
-//var_dump($todo_items);
+var_dump($todo_items);
 ?>
 	
 
@@ -36,7 +36,7 @@ $todo_items = $apicaller->sendRequest(array(
 	======================== HTML Here =========================================
 	 ==========================================================================-->
 <body>
-		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
+		<nav class="navbar navbar-default">  <!-- navbar-fixed-top -->
 			<div class="container">
 				<a class="brand" href="index.php">TODO List</a>
 			</div>
@@ -75,9 +75,9 @@ $todo_items = $apicaller->sendRequest(array(
 			<div id="todolist">
 				<!-- Note in source $todo_items is written as an object returned, but in article example
 					he returns it as an array -->
-				<?php foreach($todo_items as $todo): ?>
+				<?php	foreach($todo_items as $todo): ?>
                     <h3><a href="#"><?php echo $todo->title; ?></a></h3>
-                    <div>
+                <div>
                 <form method="POST" action="update_todo.php">
                 <div class="textalignright">
                     <a  class="delete_button btn btn-danger" href="#">Delete</a>
@@ -102,7 +102,7 @@ $todo_items = $apicaller->sendRequest(array(
             </div>
                  <?php endforeach; ?>
 			</div>
-			
+				
 		</div>  <!-- End of Main .container   -->
 	
 

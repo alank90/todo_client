@@ -42,7 +42,7 @@ class ApiCaller {
         
 		//json_decode the result
 		$result = @json_decode($result);
-
+		
 		//check if we're able to json_decode the result correctly
 		if ($result == false || isset($result->success) == false) {
 			throw new Exception('Request was not correct');
