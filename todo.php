@@ -26,9 +26,8 @@ $todo_items = $apicaller->sendRequest(array(
     'username' => $_SESSION['username'],
     'userpass' => $_SESSION['userpass']
 ));
-//$today = date("Ymd");
-//echo '';
-var_dump($todo_items);
+
+//var_dump($todo_items);
 ?>
 	
 
@@ -36,9 +35,9 @@ var_dump($todo_items);
 	======================== HTML Here =========================================
 	 ==========================================================================-->
 <body>
-		<nav class="navbar navbar-default">  <!-- navbar-fixed-top -->
+		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
 			<div class="container">
-				<a class="brand" href="index.php">TODO List</a>
+				<a class="brand" href="index.html"><?php echo $_SESSION['username'] ?>'s TODO List</a>
 			</div>
 		</nav>
 
@@ -72,6 +71,17 @@ var_dump($todo_items);
 			</div>
 			
 			<!-- ================= Todo List User markup  ==============================-->
+			
+			<!-- Check If there are any todo items. If not skip Todo list markup. =====-->
+			<?php 
+			  $result = $todo_items[0];
+			  if ($result->todo_id == '1234567')  {
+				 $todo = new stdClass();
+				 $todo->todo_id = '0'; /*assign a value todo_id. If not get error in JS line 
+				                                       delete_todo.php?todo_id=<?php echo $todo->todo_id; below*/
+		  	}
+			else  {
+			?>
 			<div id="todolist">
 				<!-- Note in source $todo_items is written as an object returned, but in article example
 					he returns it as an array -->
@@ -100,8 +110,12 @@ var_dump($todo_items);
                 </div>
                 </form>
             </div>
-                 <?php endforeach; ?>
+            <?php 
+                     endforeach;
+                 } // End   Else
+            ?>  
 			</div>
+			
 				
 		</div>  <!-- End of Main .container   -->
 	

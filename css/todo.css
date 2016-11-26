@@ -97,6 +97,11 @@ h3 a {
         text-align: left;
         display: none;
     }
+    
+ .user  {
+ 	font-size: 1.5rem;
+ 	color: #ffffff;
+ }
  
 .ui-dialog-titlebar  {
 	background-color: #217c9e;
