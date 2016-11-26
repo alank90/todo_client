@@ -79,8 +79,8 @@ $todo_items = $apicaller->sendRequest(array(
 				 $todo = new stdClass();
 				 $todo->todo_id = '0'; /*assign a value todo_id. If not get error in JS line 
 				                                       delete_todo.php?todo_id=<?php echo $todo->todo_id; below*/
-		  	}
-			else  {
+		  	 }
+		     else  {
 			?>
 			<div id="todolist">
 				<!-- Note in source $todo_items is written as an object returned, but in article example
@@ -115,9 +115,7 @@ $todo_items = $apicaller->sendRequest(array(
                  } // End   Else
             ?>  
 			</div>
-			
-				
-		</div>  <!-- End of Main .container   -->
+	</div>  <!-- End of Main .container   -->
 	
 
 
