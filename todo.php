@@ -35,7 +35,7 @@ $todo_items = $apicaller->sendRequest(array(
 	======================== HTML Here =========================================
 	 ==========================================================================-->
 <body>
-		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
+		<nav class="navbar navbar-default">  <!-- navbar-fixed-top -->
 			<div class="container">
 				<a class="brand" href="index.html"><?php echo $_SESSION['username'] ?>'s TODO List</a>
 			</div>

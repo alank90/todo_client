@@ -7,17 +7,32 @@ include_once 'apicaller.php';
  
 $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', $serverAddress . '/todo_api/');
  
-$new_item = $apicaller->sendRequest(array(
-    'controller' => 'todo',
-    'action' => 'update',
-    'title' => $_POST['title'],
-    'due_date' => $_POST['due_date'],
-    'description' => $_POST['description'],
-    'todo_id' => $_POST['todo_id'],
-    'username' => $_SESSION['username'],
-    'userpass' => $_SESSION['userpass']
-));
- 
+if (isset($_POST['markasdone_button']))  {
+	echo 'Im in markasdone';
+     $new_item = $apicaller->sendRequest(array(
+     'controller' => 'todo',
+     'action' => 'update',
+     'title' => $_POST['title'],
+     'due_date' => $_POST['due_date'],
+     'description' => $_POST['description'],
+     'is_done' => 'true',  // add is_done = true
+     'todo_id' => $_POST['todo_id'],
+     'username' => $_SESSION['username'],
+     'userpass' => $_SESSION['userpass']
+  ));
+} else  {
+	echo 'im in no markasdone';
+	$new_item = $apicaller->sendRequest(array(
+     'controller' => 'todo',
+     'action' => 'update',
+     'title' => $_POST['title'],
+     'due_date' => $_POST['due_date'],
+     'description' => $_POST['description'],
+     'todo_id' => $_POST['todo_id'],
+     'username' => $_SESSION['username'],
+     'userpass' => $_SESSION['userpass']
+  ));
+}
 header('Location: todo.php');
 exit();
 ?>
