@@ -90,7 +90,7 @@ $todo_items = $apicaller->sendRequest(array(
                 <div>
                 <form method="POST" action="update_todo.php">
                 <div class="textalignright">
-                    <a  class="delete_button btn btn-danger" href="#">Delete</a>
+                    <a  id = "delete_button"  class="btn btn-danger" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
                 </div>
                 <div>
                     <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value=<?php echo $todo->due_date;?> /></p>
@@ -101,7 +101,7 @@ $todo_items = $apicaller->sendRequest(array(
                     <input type="hidden" value="false" name="is_done" />
                     <input type="submit" class="btn btn-success" value="Mark as Done?" name="markasdone_button" />
                     <?php else: ?>
-                    <input type="hidden" value="true" name="is_done" />
+                    <input type="hidden" value="false" name="is_done" />
                     <input type="button" class="btn success" value="Done!" name="done_button" />
                     <?php endif; ?>
                     <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
@@ -144,12 +144,13 @@ $todo_items = $apicaller->sendRequest(array(
 				$('#newtodo_window').dialog('open');
 			});
 			
-			$(".delete_button").on("click",function(e)  {
+			$("#delete_button").on("click",function(e)  {
 				e.preventDefault();
 				var result = confirm("Are You Sure You Want To Delete This Item?");
                 if (result) {
                      //Redirect to delete page
-                  window.location = "delete_todo.php?todo_id=<?php echo $todo->todo_id; ?>"; 
+                  var todo_id = document.getElementById("delete_button").getAttribute("data-todo_id");
+                  window.location = "delete_todo.php?todo_id=" + todo_id; 
                }
 			});
 		});

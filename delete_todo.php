@@ -14,6 +14,6 @@ $delete_item = $apicaller->sendRequest(array(
     'userpass' => $_SESSION['userpass']
 ));
  
-header('Location: todo.php');
+//header('Location: todo.php');
 exit();
 ?>
