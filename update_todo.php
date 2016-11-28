@@ -8,8 +8,7 @@ include_once 'apicaller.php';
 $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', $serverAddress . '/todo_api/');
  
 if (isset($_POST['markasdone_button']))  {
-	echo 'Im in markasdone';
-     $new_item = $apicaller->sendRequest(array(
+	 $new_item = $apicaller->sendRequest(array(
      'controller' => 'todo',
      'action' => 'update',
      'title' => $_POST['title'],
@@ -21,8 +20,7 @@ if (isset($_POST['markasdone_button']))  {
      'userpass' => $_SESSION['userpass']
   ));
 } else  {
-	echo 'im in no markasdone';
-	$new_item = $apicaller->sendRequest(array(
+	 $new_item = $apicaller->sendRequest(array(
      'controller' => 'todo',
      'action' => 'update',
      'title' => $_POST['title'],

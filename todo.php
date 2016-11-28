@@ -101,7 +101,7 @@ $todo_items = $apicaller->sendRequest(array(
                     <input type="hidden" value="false" name="is_done" />
                     <input type="submit" class="btn btn-success" value="Mark as Done?" name="markasdone_button" />
                     <?php else: ?>
-                    <input type="hidden" value="true" name="is_done" />
+                    <input type="hidden" value="false" name="is_done" />
                     <input type="button" class="btn success" value="Done!" name="done_button" />
                     <?php endif; ?>
                     <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
