@@ -90,23 +90,26 @@ $todo_items = $apicaller->sendRequest(array(
                 <div>
                 <form method="POST" action="update_todo.php">
                 <div class="textalignright">
-                    <a  id = "delete_button"  class="btn btn-danger" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
+                    <a  class="delete_button btn btn-danger" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
                 </div>
                 <div>
                     <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value=<?php echo $todo->due_date;?> /></p>
                     <p>Description:<br /><textarea class="span8" id="description_<?php echo $todo->todo_id; ?>" class="description" name="description"><?php echo $todo->description; ?></textarea></p>
                 </div>
                 <div class="textalignright">
-                    <?php if( $todo->is_done == 'false' ): ?>
+                    <?php if( $todo->is_done == 'false' ): ?>  <!-- Display Mark Done/Savechanges Buttons  -->
                     <input type="hidden" value="false" name="is_done" />
                     <input type="submit" class="btn btn-success" value="Mark as Done?" name="markasdone_button" />
-                    <?php else: ?>
-                    <input type="hidden" value="false" name="is_done" />
-                    <input type="button" class="btn success" value="Done!" name="done_button" />
-                    <?php endif; ?>
                     <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
                     <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
                     <input type="submit" class="btn btn-primary" value="Save Changes" name="update_button" />
+                    <?php else: ?>  <!-- Display Done / Undo Button -->
+                    <input type="hidden" value="false" name="is_done" />
+                    <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
+                    <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
+                    <input type="submit" class="btn success" value="Done! / Click to Undo" name="done_button" />
+                    <?php endif; ?>
+                
                 </div>
                 </form>
             </div>
@@ -144,13 +147,13 @@ $todo_items = $apicaller->sendRequest(array(
 				$('#newtodo_window').dialog('open');
 			});
 			
-			$("#delete_button").on("click",function(e)  {
+			$(".delete_button").on("click",function(e)  {
 				e.preventDefault();
 				var result = confirm("Are You Sure You Want To Delete This Item?");
-                if (result) {
+                if (result) { 
                      //Redirect to delete page
-                  var todo_id = document.getElementById("delete_button").getAttribute("data-todo_id");
-                  window.location = "delete_todo.php?todo_id=" + todo_id; 
+                   var todo_id = this.getAttribute("data-todo_id");
+                   window.location = "delete_todo.php?todo_id=" + todo_id; 
                }
 			});
 		});

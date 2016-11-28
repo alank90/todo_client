@@ -9,11 +9,11 @@ include_once 'apicaller.php';
 $delete_item = $apicaller->sendRequest(array(
     'controller' => 'todo',
     'action' => 'delete',
-     'todo_id' => $_GET['todo_id'],
+    'todo_id' => $_GET['todo_id'],
     'username' => $_SESSION['username'],
     'userpass' => $_SESSION['userpass']
 ));
  
-//header('Location: todo.php');
+header('Location: todo.php');
 exit();
 ?>
