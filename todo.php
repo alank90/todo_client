@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/normalize.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css" type="text/css" />
-		<link rel="stylesheet" href="css/todo.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/todo.css" type="text/css"  charset="utf-8"/>
 	</head>
 	
 <!-- ================= PHP Here ==================-->
@@ -98,16 +98,16 @@ $todo_items = $apicaller->sendRequest(array(
                 </div>
                 <div class="textalignright">
                     <?php if( $todo->is_done == 'false' ): ?>  <!-- Display Mark Done/Savechanges Buttons  -->
-                    <input type="hidden" value="false" name="is_done" />
-                    <input type="submit" class="btn btn-success" value="Mark as Done?" name="markasdone_button" />
-                    <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
-                    <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
-                    <input type="submit" class="btn btn-primary" value="Save Changes" name="update_button" />
+                                     <input type="hidden" value="false" name="is_done" />
+                                    <input type="submit" class="btn btn-success" value="Mark as Done?" name="markasdone_button" />
+                                    <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
+                                    <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
+                                    <input type="submit" class="btn btn-primary" value="Save Changes" name="update_button" />
                     <?php else: ?>  <!-- Display Done / Undo Button -->
-                    <input type="hidden" value="false" name="is_done" />
-                    <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
-                    <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
-                    <input type="submit" class="btn success" value="Done! / Click to Undo" name="done_button" />
+                                    <input type="hidden" value="false" name="is_done" />
+                                    <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
+                                    <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
+                                    <input type="submit" class="btn success" value="Done! / Click to Undo" name="done_button" />
                     <?php endif; ?>
                 
                 </div>
@@ -156,6 +156,10 @@ $todo_items = $apicaller->sendRequest(array(
                    window.location = "delete_todo.php?todo_id=" + todo_id; 
                }
 			});
+			
+			// Add .done class to <h3> to show completed items in green.
+			$( ".success" ).closest("div.ui-accordion-content").prev("h3").addClass( "done" );
+			
 		});
 	</script>
 	
