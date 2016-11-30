@@ -56,6 +56,18 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+ html,
+body {
+    height: 100%;
+}
+ 
+ body  {
+ 	background: #6feabd; /* Old Browsers */
+    background: -webkit-radial-gradient(center,#6feabd,#409268); /*Safari 5.1-6*/
+    background: -o-radial-gradient(center,#6feabd,#409268); /*Opera 11.1-12*/
+    background: -moz-radial-gradient(center,#6feabd,#409268); /*Fx 3.6-15*/
+    background: radial-gradient(ellipse at center, #6feabd, #409268); /*Standard*/
+ }
  
  #main {
         margin-top: 30vh;
@@ -67,6 +79,17 @@ textarea {
 	height: 5vh;
 }
 
+.btn  {
+	 border-radius:  2rem;
+	 background-color: #30926b;
+	 -webkit-transition: width 2s; /* Safari */
+     transition: all 0.5s ease;
+ }
+    .btn:hover  {
+    	background-color: #9edfc5;
+    	width:  200px;
+     }
+
 a:hover {
     color: #555555;
 }
@@ -75,9 +98,11 @@ a:hover {
 	color:  #CCCCCC;
 	font-size: xx-large; 
 	margin-top: 40px;
+	font-family: 'Abril Fatface', cursive;
 }
 
 .label  {
+	font-family: 'Playfair Display', serif;
 	font-size: 2.2rem;
 	color: #000000;
 }

@@ -56,9 +56,38 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
- 
+ html,
+body {
+    height: 100%;
+}
+
+body {
+  background: #d2f0e5; /* Old Browsers */
+  background: -webkit-radial-gradient(center,#d2f0e5,#70b290); /*Safari 5.1-6*/
+  background: -o-radial-gradient(center,#d2f0e5,#70b290); /*Opera 11.1-12*/
+  background: -moz-radial-gradient(center,#d2f0e5,#70b290); /*Fx 3.6-15*/
+  background: radial-gradient(ellipse at center, #d2f0e5, #70b290); /*Standard*/
+ } 
+
 body {
 	padding-top: 40px;
+}
+
+p, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button  {
+font-family: 'Playfair Display', serif;
+}
+
+
+/*  Bootstrap override stylings */
+.btn  {
+	font-family: 'Playfair Display', serif;
+	border-radius:  2rem;
+	border: solid 2px #ffffff;
+	transition: all 0.5s ease;
+}
+
+.btn-danger  {
+	border: solid 2px #000;
 }
 
 .navbar {
@@ -71,6 +100,7 @@ a:hover {
 }
 
 .brand {
+	font-family: 'Abril Fatface', cursive;
 	color: #CCCCCC;
 	font-size: xx-large;
 	margin-top: 40px;
@@ -105,6 +135,11 @@ h3.done  {
  
 .ui-dialog-titlebar  {
 	background-color: #217c9e;
+}
+
+span:hover  {
+   -webkit-transform: rotateY(360deg); /* Safari */
+    transform: rotateY(360deg); /* Standard syntax */
 }
 
 /* ==========================================================================

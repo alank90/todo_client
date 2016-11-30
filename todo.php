@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/normalize.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css" type="text/css" />
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Playfair+Display" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/todo.css" type="text/css"  charset="utf-8"/>
 	</head>
 	
@@ -35,7 +36,7 @@ $todo_items = $apicaller->sendRequest(array(
 	======================== HTML Here =========================================
 	 ==========================================================================-->
 <body>
-		<nav class="navbar navbar-default">  <!-- navbar-fixed-top -->
+		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
 			<div class="container">
 				<a class="brand" href="index.html"><?php echo $_SESSION['username'] ?>'s TODO List</a>
 			</div>
