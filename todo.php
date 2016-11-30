@@ -46,7 +46,7 @@ $todo_items = $apicaller->sendRequest(array(
 	
 		 <!-- ========================= jQuery UI Dialog Markup  =============================-->
 			<div class="textalignright marginbottom10">
-				<span id="newtodo" class="btn btn-info btn-lg">Create a new TODO item</span>
+				<span id="newtodo" class="btn btn-info btn-lg fade-in one">Create a new TODO item</span>
 				<div id="newtodo_window" title="Create a new TODO item">
 					<form method="POST" action="new_todo.php">
 						<p>
@@ -91,7 +91,7 @@ $todo_items = $apicaller->sendRequest(array(
                 <div>
                 <form method="POST" action="update_todo.php">
                 <div class="textalignright">
-                    <a  class="delete_button btn btn-danger" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
+                    <a  class="delete_button btn btn-danger fade-in two" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
                 </div>
                 <div>
                     <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value=<?php echo $todo->due_date;?> /></p>
@@ -100,15 +100,15 @@ $todo_items = $apicaller->sendRequest(array(
                 <div class="textalignright">
                     <?php if( $todo->is_done == 'false' ): ?>  <!-- Display Mark Done/Savechanges Buttons  -->
                                      <input type="hidden" value="false" name="is_done" />
-                                    <input type="submit" class="btn btn-success" value="Mark as Done?" name="markasdone_button" />
+                                    <input type="submit" class="btn btn-success fade-in three" value="Mark as Done?" name="markasdone_button" />
                                     <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
                                     <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
-                                    <input type="submit" class="btn btn-primary" value="Save Changes" name="update_button" />
+                                    <input type="submit" class="btn btn-primary fade-in four" value="Save Changes" name="update_button" />
                     <?php else: ?>  <!-- Display Done / Undo Button -->
                                     <input type="hidden" value="false" name="is_done" />
                                     <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
                                     <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
-                                    <input type="submit" class="btn success" value="Done! / Click to Undo" name="done_button" />
+                                    <input type="submit" class="btn success fade-in three" value="Done! / Click to Undo" name="done_button" />
                     <?php endif; ?>
                 
                 </div>
