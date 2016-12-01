@@ -56,8 +56,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
- html,
-body {
+ body {
     height: 100%;
 }
 
@@ -111,24 +110,40 @@ a:hover {
 }
 
 h3.done  {
-	background:  #76c376;
+	background:  rgba(4,71,21,0.7);
 }
+     h3>p  {
+     	display: inline-block;
+     	margin-left: 85%;
+     	color: #000;
+     }
+    .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a.ui-button:link, a.ui-button:visited, .ui-button {
+     	color: rgba(8,49,18,0.7);
+     }
+     .ui-state-hover, .ui-state-focus {
+     	background: rgba(142,203,157,0.7);
+     }
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover  {
+      	  background-color: rgba(227,247,220,0.9);
+      }
+     div#todolist>div  {
+     	background-color:  rgba(196,245,181,0.7);
+     }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
 	font-size: 2.2rem;
-	color: #050709;
+	color: #07521A;
 }
 
 .textalignright {
 	text-align: right;
 }
 
-     
-    .marginbottom10 {
+ .marginbottom10 {
         margin-bottom: 10px;
     }
     
-    #newtodo_window {
+  #newtodo_window {
         text-align: left;
         display: none;
     }
@@ -137,7 +152,8 @@ h3.done  {
 	background-color: #217c9e;
 }
 
-/* make keyframes that tell the start state and the end state of our object */
+/* =========== CSS for button animations ==========================
+     make keyframes that tell the start state and the end state of our object == */
 
 @-webkit-keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
@@ -183,6 +199,8 @@ h3.done  {
 	-moz-animation-delay: 2s;
 	animation-delay: 2s;
 }
+
+/* End Button Animation CSS */
 
 /* ==========================================================================
    Media Queries

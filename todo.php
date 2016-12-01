@@ -87,12 +87,12 @@ $todo_items = $apicaller->sendRequest(array(
 				<!-- Note in source $todo_items is written as an object returned, but in article example
 					he returns it as an array -->
 				<?php	foreach($todo_items as $todo): ?>
-                    <h3><a href="#"><?php echo $todo->title; ?></a></h3>
+                <h3> <a href="#"><?php echo $todo->title; ?></a> <p>Due <?php echo $todo->due_date;?> </p> </h3>
                 <div>
-                <form method="POST" action="update_todo.php">
-                <div class="textalignright">
-                    <a  class="delete_button btn btn-danger fade-in two" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
-                </div>
+                  <form method="POST" action="update_todo.php">
+                  <div class="textalignright">
+                       <a  class="delete_button btn btn-danger fade-in two" href="#" data-todo_id="<?php echo $todo->todo_id; ?>"/>Delete</a>
+                   </div>
                 <div>
                     <p>Date Due:<br /><input type="text" id="datepicker_<?php echo $todo->todo_id; ?>" class="datepicker" name="due_date" value=<?php echo $todo->due_date;?> /></p>
                     <p>Description:<br /><textarea class="span8" id="description_<?php echo $todo->todo_id; ?>" class="description" name="description"><?php echo $todo->description; ?></textarea></p>
