@@ -85,6 +85,20 @@ font-family: 'Playfair Display', serif;
 	max-height: 20vh;
 }
 
+.textalignright {
+	margin-top: 4vh;
+	text-align: right;
+}
+
+ .marginbottom10 {
+        margin-bottom: 10px;
+    }
+    
+  #newtodo_window {
+        text-align: left;
+        display: none;
+    }
+
 
 /*  Bootstrap override stylings */
 .btn  {
@@ -155,19 +169,6 @@ h3.done  {
 	color: #07521A;
 }
 
-.textalignright {
-	text-align: right;
-}
-
- .marginbottom10 {
-        margin-bottom: 10px;
-    }
-    
-  #newtodo_window {
-        text-align: left;
-        display: none;
-    }
- 
 .ui-dialog-titlebar  {
 	background-color: #217c9e;
 }

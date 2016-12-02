@@ -110,7 +110,7 @@ $todo_items = $apicaller->sendRequest(array(
                                     <input type="hidden" value="false" name="is_done" />
                                     <input type="hidden" value="<?php echo $todo->todo_id; ?>" name="todo_id" />
                                     <input type="hidden" value="<?php echo $todo->title; ?>" name="title" />
-                                    <input type="submit" class="btn success fade-in three" value="Done! / Click to Undo" name="done_button" />
+                                    <input type="submit" class="btn success fade-in three" value="Done! / Undo" name="done_button" />
                     <?php endif; ?>
                 
                 </div>
@@ -160,7 +160,7 @@ $todo_items = $apicaller->sendRequest(array(
                }
 			});
 			
-			// Add .done class to <h3> to show completed items in green.
+			// Add .done class to <h3> to show completed items in green w/checkmark.
 			$( ".success" ).closest("div.ui-accordion-content").prev("h3").addClass( "done" );
 		    $( ".success" ).closest("div.ui-accordion-content").prev("h3").append( "<span>&#10004</span>" );
 		});
