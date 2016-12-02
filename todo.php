@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset=utf-8>
 <html>
 <head>
 		<title>TODO List</title>
@@ -39,6 +40,7 @@ $todo_items = $apicaller->sendRequest(array(
 		<nav class="navbar navbar-default navbar-fixed-top">  <!-- navbar-fixed-top -->
 			<div class="container">
 				<a class="brand" href="index.html"><?php echo $_SESSION['username'] ?>'s TODO List</a>
+				<img class="nav_image" src="img/todo_small.png" alt="checklist-picture" />
 			</div>
 		</nav>
 
@@ -160,7 +162,7 @@ $todo_items = $apicaller->sendRequest(array(
 			
 			// Add .done class to <h3> to show completed items in green.
 			$( ".success" ).closest("div.ui-accordion-content").prev("h3").addClass( "done" );
-			
+		    $( ".success" ).closest("div.ui-accordion-content").prev("h3").append( "<span>&#10004</span>" );
 		});
 	</script>
 	
