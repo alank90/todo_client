@@ -13,10 +13,21 @@
 	
 <!-- ================= PHP Here ==================-->
 <?php
-// Start with a read of all todo items off the server
+// server should keep session data for AT LEAST 1 hour
+ini_set('session.gc_maxlifetime', 3600);
+
+// each client should remember their session id for EXACTLY 1 hour
+session_set_cookie_params(3600);
+
 ini_set('display_errors',1); 
  error_reporting(E_ALL);
 session_start();
+// If Session expired throw back to index.html
+if (!$_SESSION['username'])  {
+	header('Location: index.html');
+	exit;
+}
+// Start with a read of all todo items off the server
 include_once 'apicaller.php';
 $serverAddress = "http://" . $_SERVER['SERVER_ADDR'];
  
