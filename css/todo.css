@@ -145,6 +145,7 @@ h3.done  {
      	margin-right: 5vw;
      	color: #000;
      }
+     
     .ui-state-active, .ui-state-default, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover  {
      	color: #000;
     }
