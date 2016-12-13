@@ -171,11 +171,11 @@ h3.done  {
 
 .ui-dialog-titlebar  {
 	background-color: #217c9e;
-}	
+}
+
 .ui-accordion-header-icon .ui-icon .ui-icon-triangle-1-e  {
 	background-image: url("css/ui-icons_777777_256x240.png")
 }
-
 
 /* =========== CSS for button animations ==========================
      make keyframes that tell the start state and the end state of our object == */
