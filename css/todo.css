@@ -160,6 +160,7 @@ h3.done  {
      	margin-right: 5vw;
      	color: #000;
      }
+
            h3 + div {
            	  clear: right;  
            }
