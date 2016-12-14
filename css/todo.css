@@ -86,7 +86,7 @@ font-family: 'Playfair Display', serif;
 }
 
 .textalignright {
-	margin-top: 4vh;
+	margin-top: 1.5vh;
 	text-align: right;
 }
 
@@ -160,7 +160,6 @@ h3.done  {
      	margin-right: 5vw;
      	color: #000;
      }
-
            h3 + div {
            	  clear: right;  
            }
