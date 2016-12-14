@@ -107,9 +107,24 @@ font-family: 'Playfair Display', serif;
 	border: solid 2px #ffffff;
 	transition: all 0.5s ease;
 }
+.btn-primary  {
+	background: rgba(66, 115, 58,.8);
+}
+    .btn-primary:hover  {
+	   background: rgba(150, 184, 144,.8);
+	   border-color: rgba(66, 115, 58,.7);
+     }
+.btn-info  {
+	background: rgba(138, 76, 151,.7);
+}
+    .btn-info:hover {
+	    background: rgba(169, 140, 179,.7);
+	    border-color: rgba(169, 140, 179,.7);
+     }
 
 .btn-danger  {
 	border: solid 2px #000;
+	background: rgba(255, 30, 30.7);
 }
 
 .navbar {
@@ -145,21 +160,34 @@ h3.done  {
      	margin-right: 5vw;
      	color: #000;
      }
+           h3 + div {
+           	  clear: right;  
+           }
+           h3 > a  {
+           	   display: inline-block;
+           	    max-width: 40vw;
+           }
+   
     .ui-state-active, .ui-state-default, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover  {
      	color: #000;
+     	background: rgba(141, 170, 135,.6);
     }
     .ui-state-hover  {
     	color: #85db85;
     }
+      
     .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a.ui-button:link, a.ui-button:visited, .ui-button {
      	color: rgba(8,49,18,0.7);
      }
+     
      .ui-state-hover, .ui-state-focus {
      	background: rgba(142,203,157,0.7);
      }
+     
     .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover  {
       	  background-color: rgba(227,247,220,0.9);
       }
+      
      div#todolist>div  {
      	background-color:  rgba(196,245,181,0.7);
      }
@@ -170,12 +198,9 @@ h3.done  {
 }
 
 .ui-dialog-titlebar  {
-	background-color: #217c9e;
+	background-color: #BBEBB8;
 }
 
-.ui-accordion-header-icon .ui-icon .ui-icon-triangle-1-e  {
-	background-image: url("css/ui-icons_777777_256x240.png")
-}
 
 /* =========== CSS for button animations ==========================
      make keyframes that tell the start state and the end state of our object == */
@@ -197,8 +222,6 @@ h3.done  {
 	-moz-animation-duration: 1s;
 	animation-duration: 1s;
 }
-
-
 
 .fade-in.one {
 	-webkit-animation-delay: 0.5s;
