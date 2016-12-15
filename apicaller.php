@@ -1,6 +1,5 @@
 <?php
-ini_set('display_errors',1); 
-error_reporting(E_ALL);
+
 class ApiCaller {
 	//some variables for the object
 	private $_app_id;
@@ -32,7 +31,6 @@ class ApiCaller {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this -> _api_url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		//curl_setopt($ch, CURLOPT_POST, count($params));
 		curl_setopt($ch, CURLOPT_POST,  1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 				
@@ -40,7 +38,7 @@ class ApiCaller {
 		$result = curl_exec($ch);
 		curl_close($ch);
         
-		//json_decode the result
+		//json_decode the result. Note @ sign suppresses error messages.
 		$result = @json_decode($result);
 		
 		//check if we're able to json_decode the result correctly

@@ -40,7 +40,6 @@ $todo_items = $apicaller->sendRequest(array(
     'userpass' => $_SESSION['userpass']
 ));
 
-//var_dump($todo_items);
 ?>
 	
 
@@ -97,8 +96,6 @@ $todo_items = $apicaller->sendRequest(array(
 		     else  {
 			?>
 			<div id="todolist">
-				<!-- Note in source $todo_items is written as an object returned, but in article example
-					he returns it as an array -->
 				<?php	foreach($todo_items as $todo): ?>
                 <h3> <a href="#"><?php echo $todo->title; ?></a> <p>Due <?php echo $todo->due_date;?> </p> </h3>
                 <div>
