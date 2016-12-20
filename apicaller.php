@@ -38,7 +38,8 @@ class ApiCaller {
 		$result = curl_exec($ch);
 		curl_close($ch);
         
-		//json_decode the result. Note @ sign suppresses error messages.
+		/*json_decode the result. Note @ sign suppresses error messages.
+		  This changes $result from an array to an object. */
 		$result = @json_decode($result);
 		
 		//check if we're able to json_decode the result correctly
