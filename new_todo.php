@@ -5,7 +5,7 @@ include_once 'apicaller.php';
  
 $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', $serverAddress . '/todo_api/');
  
-$new_item = $apicaller->sendRequest(array(
+$apicaller->sendRequest(array(
     'controller' => 'todo',
     'action' => 'create',
     'title' => $_POST['title'],
@@ -17,4 +17,3 @@ $new_item = $apicaller->sendRequest(array(
  
 header('Location: todo.php');
 exit();
-?>

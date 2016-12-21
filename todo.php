@@ -59,7 +59,7 @@ $todo_items = $apicaller->sendRequest(array(
 		 <!-- ========================= jQuery UI Dialog Markup  =============================-->
 			<div class="textalignright marginbottom10">
 				<span id="newtodo" class="btn btn-info btn-lg fade-in one">Create a new TODO item</span>
-				<div id="newtodo_window" title="Create a new TODO item">
+				<div id="newtodo_window" title="Enter TODO item">
 					<form method="POST" action="new_todo.php">
 						<p>
 							Title:
@@ -147,6 +147,7 @@ $todo_items = $apicaller->sendRequest(array(
 			$("#todolist").accordion({
 				collapsible : true
 			});
+			
 			$(".datepicker").datepicker();
 			$('#newtodo_window').dialog({
 				autoOpen : false,
@@ -154,6 +155,7 @@ $todo_items = $apicaller->sendRequest(array(
 				width : 'auto',
 				modal : true
 			});
+			
 			$('#newtodo').click(function() {
 				$('#newtodo_window').dialog('open');
 			});
